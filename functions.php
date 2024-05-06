@@ -29,6 +29,16 @@ function tf__colors_head() {
     $text_color = get_theme_mod( 'tf__text_color' );
     $footer_color = get_theme_mod( 'tf__footer_color' );
 
+    $navigator_height = get_theme_mod( 'tf__navigator_height', 90);
+
+    $show_top_bar = !get_theme_mod( 'tf__show_top_bar', true) ? 'block' : 'none';
+
+    if( is_customize_preview() && get_theme_mod( 'tf__show_top_bar') ) {
+        $show_top_bar = 'block';
+    } else {
+        $show_top_bar = 'none';
+    }
+
     $body_font = get_theme_mod( 'tf__body_font');
     $heading_font = get_theme_mod( 'tf__headings_font');
     $logo_font = get_theme_mod( 'tf__logo_font');
@@ -63,7 +73,9 @@ function tf__colors_head() {
         }
         #tf__bottom-header {
             background-color: <?php echo $navigation_color; ?>;
+            height: <?php echo $navigator_height; ?>px;
         }
+
 
         #tf__bottom-header nav ul {
             background-color: <?php echo $navigation_color; ?>;
@@ -71,6 +83,7 @@ function tf__colors_head() {
 
         #tf__top-header {
             background-color: <?php echo $top_header; ?>;
+            display: <?php echo $show_top_bar; ?>;
         }
         #tf__footer {
             background-color: <?php echo $footer_color; ?>;

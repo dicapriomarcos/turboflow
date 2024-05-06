@@ -8,3 +8,14 @@ function generateGoogleFontsUrl($font) {
 
     return 'https://fonts.googleapis.com/css2?family=' . $font_name . ':ital,wght@0,' . $font_width . ';1,' . $font_width . '&display=swap';
 }
+
+function isActiveTopBar() {
+
+    if(is_customize_preview()){
+        $show_top_bar = true;
+    }else{
+        $show_top_bar = get_theme_mod('tf__show_top_bar');    
+    }
+
+    return $show_top_bar;
+}

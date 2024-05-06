@@ -57,4 +57,4 @@ Array.from(subMenuToggles).forEach(function(subMenuToggle) {
 		$('.menu-item-'+id).toggleClass('active');
 	}
 
-}); 
+});

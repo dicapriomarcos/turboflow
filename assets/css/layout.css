@@ -32,6 +32,7 @@ header#tf__header {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
+    height: 100%;
 }
 
 /* END HEADER */
@@ -125,6 +126,9 @@ button#tf__menu-button {
 #tf__text_logo {
     padding: 5px 0;
     font-size: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* END LOGO */

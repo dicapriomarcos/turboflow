@@ -9,11 +9,14 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
 <header id="tf__header">
+    <?php if( isActiveTopBar() ): ?>
     <div id="tf__top-header">
+        <?php ?>
         <div class="tf__container">
            <p>top bar example</p> 
         </div>  
     </div>
+    <?php endif; ?>
     <div id="tf__bottom-header">
         <div class="tf__container">
             <?php if (has_custom_logo()) : ?>
