@@ -1,0 +1,224 @@
+/* GENERALS */
+
+
+.tf__container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* HEADER */
+
+header#tf__header {
+
+}
+
+#tf__top-header {
+    width: 100%;
+}
+
+#tf__top-header * {
+    font-size: 13px;
+}
+
+#tf__bottom-header {
+    width: 100%;
+    
+}
+
+#tf__bottom-header > .tf__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+/* END HEADER */
+
+
+/* STAR NAVIGATION */
+
+#tf__desktop-nav-wrapper {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-end;
+}
+
+nav#tf__navigation {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 0 0;
+}
+
+nav#tf__navigation > ul {
+    display: flex;
+    gap: 10px;
+    height: auto;
+    align-items: stretch;
+}
+
+nav#tf__navigation a {
+    padding: 5px 10px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    font-size: 14px;
+}
+
+button#tf__menu-button {
+    background-color: unset;
+    border: 0;
+}
+
+
+.menu-item-has-children > .sub-menu-toggle {
+    float: right;
+    margin-left: auto;
+    font-family: "Font Awesome";
+    content: ">";
+    font-size: 12px;
+    margin-right: 5px;
+}
+.menu-item-has-children:not(.active) .sub-menu {
+    display: none;
+}
+
+.menu-item-has-children {
+    position: relative
+}
+
+.menu-item-has-children .sub-menu {
+    position: absolute;
+    background-color: inherit;
+}
+
+.menu-item-has-children .menu-item-has-children > a {
+    padding-right: 0;
+    margin-right: 0;
+}
+
+.submenu-toggle {
+    background-color: unset;
+    border: 0;
+    padding: 5px;
+    position: absolute;
+    right: -12px;
+    top: 0;
+    bottom: 0;
+    display: inline;
+}
+
+.submenu-toggle svg {
+   height: 15px;
+   width: 15px;
+   margin: auto;
+   padding: 0;
+}
+
+/* END NAVIGATION */
+
+/* START LOGO */
+
+#tf__text_logo {
+    padding: 5px 0;
+    font-size: 1.5rem;
+}
+
+/* END LOGO */
+
+/* START MAIN */
+
+#tf__main-content {
+    width: 100%;
+    min-height: 50vh;
+}
+
+/* END MAIN */
+
+/* START FOOTER */
+
+#tf__footer {
+    padding: 20px 0;
+}
+
+#tf__mobile-nav-wrapper {
+    display: flex;
+    overflow-x: hidden;
+}
+
+#tf__mobile-nav-wrapper #tf__navigation {
+    right: 100%;
+}
+
+#tf__mobile-nav-wrapper #tf__navigation {
+    position: fixed;
+    background-color: white;
+    color: black;
+    height: 100%;
+    min-height: 100vh;
+    max-width: 80vw;
+    display: block;
+    padding: 30px 0;
+    transition: right 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    right: -20%;
+    opacity: 0;
+}
+
+
+#tf__mobile-nav-wrapper #tf__navigation > ul {
+    flex-direction: column;
+    gap: 0;
+}
+
+#tf__mobile-nav-wrapper:not(.active) {
+    visibility: hidden;
+}
+
+
+#tf__mobile-nav-wrapper:not(.active) #tf__navigation{
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    padding: 0;
+    opacity: 0;
+}
+
+#tf__mobile-nav-wrapper.active {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 99;
+}
+
+#tf__mobile-nav-wrapper.active #tf__navigation {
+    right: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+#tf__mobile-nav-wrapper.active #tf__navigation > ul > li > a {
+    padding: 10px 15px;
+    padding-right: 40px;
+    font-size: 14px;
+}
+
+#tf__mobile-nav-wrapper.active #tf__navigation > ul > li:not(:last-child) {
+    border-top: 1px solid #ccc;
+}
+
+#tf__mobile-nav-wrapper.active #tf__navigation > ul > li:last-child{
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+}
+
+
+/* END FOOTER */
+
