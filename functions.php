@@ -31,12 +31,8 @@ function tf__colors_head() {
 
     $navigator_height = get_theme_mod( 'tf__navigator_height', 90);
 
-    $show_top_bar = !get_theme_mod( 'tf__show_top_bar', true) ? 'block' : 'none';
-
-    if( is_customize_preview() && get_theme_mod( 'tf__show_top_bar') ) {
-        $show_top_bar = 'block';
-    } else {
-        $show_top_bar = 'none';
+    if( is_customize_preview() ) {
+        $show_top_bar = get_theme_mod( 'tf__show_top_bar') === true ? 'block' : 'none';
     }
 
     $body_font = get_theme_mod( 'tf__body_font');

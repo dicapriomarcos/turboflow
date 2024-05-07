@@ -83,6 +83,7 @@ button#tf__menu-button {
     font-size: 12px;
     margin-right: 5px;
 }
+
 .menu-item-has-children:not(.active) .sub-menu {
     display: none;
 }
@@ -94,11 +95,30 @@ button#tf__menu-button {
 .menu-item-has-children .sub-menu {
     position: absolute;
     background-color: inherit;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
 }
 
-.menu-item-has-children .menu-item-has-children > a {
-    padding-right: 0;
-    margin-right: 0;
+.menu-item-has-children .sub-menu li {
+    padding: 10px 5px;
+}
+
+.menu-item-has-children .sub-menu li:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+}
+
+
+
+.menu-item-has-children .sub-menu a {
+    transition: margin-left 0.4s ease-in-out;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: block;
+}
+
+.menu-item-has-children .sub-menu a:hover {
+    margin-left: 15px;
 }
 
 .submenu-toggle {
@@ -109,7 +129,8 @@ button#tf__menu-button {
     right: -12px;
     top: 0;
     bottom: 0;
-    display: inline;
+    display: inline-flex;
+    cursor: pointer;
 }
 
 .submenu-toggle svg {
@@ -117,6 +138,10 @@ button#tf__menu-button {
    width: 15px;
    margin: auto;
    padding: 0;
+}
+
+.menu-item-has-children.active > .submenu-toggle svg {
+    transform: rotateX(180deg);
 }
 
 /* END NAVIGATION */

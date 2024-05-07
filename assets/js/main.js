@@ -43,18 +43,27 @@ jQuery(document).ready(function($){
 	});
 
 
-var subMenuToggles = document.getElementsByClassName('submenu-toggle');
-Array.from(subMenuToggles).forEach(function(subMenuToggle) {
-    subMenuToggle.addEventListener('click', function(event) {
-        event.stopPropagation();
-        var id = this.getAttribute('data-id');
-        $('.menu-item-' + id).toggleClass('active');
-    });
-});
+	var subMenuToggles = document.getElementsByClassName('submenu-toggle');
+	Array.from(subMenuToggles).forEach(function(subMenuToggle) {
+		subMenuToggle.addEventListener('click', function(event) {
+			event.stopPropagation();
+			
+			let id = this.getAttribute('data-id');
+			let allMenuItems = $('.menu-item-has-children');
 
+			for(let menuItem of allMenuItems){
+				if( menuItem.classList.contains('menu-item-'+id)){
+					menuItem.classList.toggle('active');
+				}else{
+					menuItem.classList.remove('active');
+				}
+	
+			}
+			
+			//$('.menu-item-' + id).toggleClass('active');	
 
-	function openSubMenu(id){
-		$('.menu-item-'+id).toggleClass('active');
-	}
+			
+		});
+	});
 
 });
