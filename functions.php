@@ -32,7 +32,7 @@ function tf__colors_head() {
     $navigator_height = get_theme_mod( 'tf__navigator_height', 90);
 
     if( is_customize_preview() ) {
-        $show_top_bar = get_theme_mod( 'tf__show_top_bar') === true ? 'block' : 'none';
+        $show_top_bar = get_theme_mod( 'tf__show_top_bar') == true ? 'block' : 'none';
     }
 
     $body_font = get_theme_mod( 'tf__body_font');
@@ -63,27 +63,7 @@ function tf__colors_head() {
     <link rel="stylesheet" href="<?php echo $logo_font_url; ?>">
 
     <style>
-        body {
-            background-color: <?php echo $primary_color; ?>;
-            color: <?php echo $text_color; ?>;
-        }
-        #tf__bottom-header {
-            background-color: <?php echo $navigation_color; ?>;
-            height: <?php echo $navigator_height; ?>px;
-        }
-
-
-        #tf__bottom-header nav ul {
-            background-color: <?php echo $navigation_color; ?>;
-        }
-
-        #tf__top-header {
-            background-color: <?php echo $top_header; ?>;
-            display: <?php echo $show_top_bar; ?>;
-        }
-        #tf__footer {
-            background-color: <?php echo $footer_color; ?>;
-        }
+        
         @font-face {
             font-family: 'tf__headings_font';
             src: url('<?php echo $heading_font; ?>');
@@ -95,14 +75,35 @@ function tf__colors_head() {
         }
 
         body {
+            background-color: <?php echo $primary_color; ?>;
+            color: <?php echo $text_color; ?>;
             font-family: '<?php echo $body_font_name; ?>';
             font-weight: <?php echo $body_font_weight; ?>;
         }
 
-        h2#tf__text_logo a {
+        .tf__main-header .top-bar {
+            background-color: <?php echo $top_header; ?>;
+        }
+
+        .tf__main-header .header {
+            background-color: <?php echo $navigation_color; ?>;
+            height: <?php echo $navigator_height; ?>px;
+        }
+
+        .tf__main-header .header .sub-menu {
+            background-color: <?php echo $navigation_color; ?>;
+        }
+
+        .tf__main-header .text-logo a {
             font-family: '<?php echo $logo_font_name; ?>';
             font-weight: <?php echo $logo_font_weight; ?>;
         }
+
+        .tf__footer {
+            background-color: <?php echo $footer_color; ?>;
+        }
+
+
 
     </style>
     

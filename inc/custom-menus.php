@@ -7,10 +7,10 @@ add_action( 'init', 'tf__register_menus' );
 function tf__register_menus() {
     register_nav_menus(
         array(
-            'tf_menu_primary' => __( 'Primary Menu', 'turboflow' ),
-            'tf_menu_mobile' => __( 'Mobile Menu', 'turboflow' ),
-            'tf_menu_legal' => __( 'Legal Menu', 'turboflow' ),
-            'tf_menu_footer' => __( 'Footer Menu', 'turboflow' ),
+            'tf__menu_primary' => __( 'Primary Menu', 'turboflow' ),
+            'tf__menu_mobile' => __( 'Mobile Menu', 'turboflow' ),
+            'tf__menu_legal' => __( 'Legal Menu', 'turboflow' ),
+            'tf__menu_footer' => __( 'Footer Menu', 'turboflow' ),
         )
     );
 }

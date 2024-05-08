@@ -1,6 +1,5 @@
 /* GENERALS */
 
-
 .tf__container {
     max-width: 1200px;
     width: 100%;
@@ -10,24 +9,11 @@
 
 /* HEADER */
 
-header#tf__header {
-
-}
-
-#tf__top-header {
+.tf__main-header .header {
     width: 100%;
 }
 
-#tf__top-header * {
-    font-size: 13px;
-}
-
-#tf__bottom-header {
-    width: 100%;
-    
-}
-
-#tf__bottom-header > .tf__container {
+.tf__main-header .header > .tf__container {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -37,30 +23,30 @@ header#tf__header {
 
 /* END HEADER */
 
-
 /* STAR NAVIGATION */
 
-#tf__desktop-nav-wrapper {
+.tf__main-navigator {
     display: flex;
     align-items: stretch;
     justify-content: flex-end;
 }
 
-nav#tf__navigation {
+.tf__main-navigator {
     display: flex;
     justify-content: center;
     align-items: stretch;
     padding: 0 0;
 }
 
-nav#tf__navigation > ul {
+.tf__main-navigator > div > ul {
     display: flex;
     gap: 10px;
     height: auto;
     align-items: stretch;
+    height: 100%;
 }
 
-nav#tf__navigation a {
+.tf__main-navigator a {
     padding: 5px 10px;
     font-weight: 600;
     display: inline-flex;
@@ -69,13 +55,12 @@ nav#tf__navigation a {
     font-size: 14px;
 }
 
-button#tf__menu-button {
+.tf__main-navigator .menu-button {
     background-color: unset;
     border: 0;
 }
 
-
-.menu-item-has-children > .sub-menu-toggle {
+.tf__main-navigator .menu-item-has-children > .sub-menu-toggle {
     float: right;
     margin-left: auto;
     font-family: "Font Awesome";
@@ -84,15 +69,15 @@ button#tf__menu-button {
     margin-right: 5px;
 }
 
-.menu-item-has-children:not(.active) .sub-menu {
+.tf__main-navigator .menu-item-has-children:not(.active) .sub-menu {
     display: none;
 }
 
-.menu-item-has-children {
+.tf__main-navigator .menu-item-has-children {
     position: relative
 }
 
-.menu-item-has-children .sub-menu {
+.tf__main-navigator .menu-item-has-children .sub-menu {
     position: absolute;
     background-color: inherit;
     min-width: 250px;
@@ -100,24 +85,23 @@ button#tf__menu-button {
     flex-direction: column;
 }
 
-.menu-item-has-children .sub-menu li {
+.tf__main-navigator .menu-item-has-children .sub-menu li {
     padding: 10px 5px;
 }
 
-.menu-item-has-children .sub-menu li:not(:last-child) {
+.tf__main-navigator .menu-item-has-children .sub-menu li:not(:last-child) {
     border-bottom: 1px solid #ccc;
 }
 
-
-
-.menu-item-has-children .sub-menu a {
+.tf__main-navigator .menu-item-has-children .sub-menu a {
     transition: margin-left 0.4s ease-in-out;
     padding-left: 10px;
     padding-right: 10px;
     display: block;
+    font-size: 12px;
 }
 
-.menu-item-has-children .sub-menu a:hover {
+.tf__main-navigator .menu-item-has-children .sub-menu a:hover {
     margin-left: 15px;
 }
 
@@ -140,7 +124,7 @@ button#tf__menu-button {
    padding: 0;
 }
 
-.menu-item-has-children.active > .submenu-toggle svg {
+.tf__main-navigator .menu-item-has-children.active > .submenu-toggle svg {
     transform: rotateX(180deg);
 }
 
@@ -148,7 +132,7 @@ button#tf__menu-button {
 
 /* START LOGO */
 
-#tf__text_logo {
+.tf__main-header .text-logo {
     padding: 5px 0;
     font-size: 1.5rem;
     display: inline-flex;
@@ -160,7 +144,7 @@ button#tf__menu-button {
 
 /* START MAIN */
 
-#tf__main-content {
+.tf__main-content {
     width: 100%;
     min-height: 50vh;
 }
@@ -169,20 +153,20 @@ button#tf__menu-button {
 
 /* START FOOTER */
 
-#tf__footer {
+.tf__footer {
     padding: 20px 0;
 }
 
-#tf__mobile-nav-wrapper {
+.tf__mobile-nav-wrapper {
     display: flex;
     overflow-x: hidden;
 }
 
-#tf__mobile-nav-wrapper #tf__navigation {
+.tf__mobile-nav-wrapper .tf__navigation {
     right: 100%;
 }
 
-#tf__mobile-nav-wrapper #tf__navigation {
+.tf__mobile-nav-wrapper .tf__navigation {
     position: fixed;
     background-color: white;
     color: black;
@@ -196,18 +180,16 @@ button#tf__menu-button {
     opacity: 0;
 }
 
-
-#tf__mobile-nav-wrapper #tf__navigation > ul {
+.tf__mobile-nav-wrapper .tf__navigation > ul {
     flex-direction: column;
     gap: 0;
 }
 
-#tf__mobile-nav-wrapper:not(.active) {
+.tf__mobile-nav-wrapper:not(.active) {
     visibility: hidden;
 }
 
-
-#tf__mobile-nav-wrapper:not(.active) #tf__navigation{
+.tf__mobile-nav-wrapper:not(.active) .tf__navigation{
     visibility: hidden;
     width: 0;
     height: 0;
@@ -215,7 +197,7 @@ button#tf__menu-button {
     opacity: 0;
 }
 
-#tf__mobile-nav-wrapper.active {
+.tf__mobile-nav-wrapper.active {
     position: absolute;
     top: 0;
     right: 0;
@@ -225,29 +207,25 @@ button#tf__menu-button {
     z-index: 99;
 }
 
-#tf__mobile-nav-wrapper.active #tf__navigation {
+.tf__mobile-nav-wrapper.active .tf__navigation {
     right: 0;
     opacity: 1;
     visibility: visible;
 }
 
-
-
-#tf__mobile-nav-wrapper.active #tf__navigation > ul > li > a {
+.tf__mobile-nav-wrapper.active .tf__navigation > ul > li > a {
     padding: 10px 15px;
     padding-right: 40px;
     font-size: 14px;
 }
 
-#tf__mobile-nav-wrapper.active #tf__navigation > ul > li:not(:last-child) {
+.tf__mobile-nav-wrapper.active .tf__navigation > ul > li:not(:last-child) {
     border-top: 1px solid #ccc;
 }
 
-#tf__mobile-nav-wrapper.active #tf__navigation > ul > li:last-child{
+.tf__mobile-nav-wrapper.active .tf__navigation > ul > li:last-child{
     border-bottom: 1px solid #ccc;
     border-top: 1px solid #ccc;
 }
 
-
 /* END FOOTER */
-
